@@ -58,7 +58,12 @@
                 crossorigin webkit-playsinline autoplay muted playsinline>
             </video>
         </a-assets>
-
+        <a-assets>
+            <video src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/ryoryo1192/slcqr1/main/slcqr2.mp4"
+                preload="auto" id="slcqr2" response-type="arraybuffer" loop
+                crossorigin webkit-playsinline autoplay muted playsinline>
+            </video>
+        </a-assets>
         <a-nft
             videohandler
             type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/ryoryo1192/slcqr1/main/images/slcqr1'
@@ -74,10 +79,31 @@
             </a-video>
         </a-nft>
 		<a-entity camera></a-entity>
+	 <a-nft
+            videohandler
+            type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/ryoryo1192/slcqr1/main/images/slcqr2'
+            smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-video
+                src="#slcqr2"
+                position='50 150 -100'
+                width='500'
+                height='950'
+		rotation="270 0 0"
+                >
+            </a-video>
+        </a-nft>
+		<a-entity camera></a-entity>
 	</a-scene>
          <script>
            window.addEventListener('markerFound', function () {
            var v = document.querySelector('#slcqr1');
+           v.play();
+            });
+         </script>
+	<script>
+           window.addEventListener('markerFound', function () {
+           var v = document.querySelector('#slcqr2');
            v.play();
             });
          </script>
